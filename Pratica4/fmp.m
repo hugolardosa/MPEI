@@ -3,9 +3,8 @@ function [y] = fmp(xi,pX, N)
     p =  pX/sum(pX)
     y = zeros(1,N)
     for j=1:N
-        U=rand()
-        i = 1+sum(U>cumsum(p));
-        y(i) = pX(i);
+        i = 1+sum(rand()>cumsum(p));
+        y(i) = xi(i);
     end
 end
 
