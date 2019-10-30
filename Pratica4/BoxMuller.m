@@ -1,4 +1,4 @@
-function [x,y] = BoxMuller(N)
+function [X,Y] = BoxMuller(N)
 %BoxMuller gera duas variáveis com distribuição normal
     U1=rand(1,N); % gerar uma v.a. uniforme
     U2=rand(1,N); % gerar outra v.a. uniforme
