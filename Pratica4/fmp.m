@@ -1,12 +1,11 @@
-function [y] = fmp(x,px, N)
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
-    p =  px/sum(px)
+function [y] = fmp(xi,pX, N)
+%FMP funcão de massa de probabilidade
+    p =  pX/sum(pX)
     y = zeros(1,N)
     for j=1:N
         U=rand()
         i = 1+sum(U>cumsum(p));
-        y(i) = px(i);
+        y(i) = pX(i);
     end
 end
 
