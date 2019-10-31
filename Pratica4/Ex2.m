@@ -5,12 +5,11 @@ sprintf('Número de sucessos: %d', sum(exp == 1))
 
 %% Exercício 2 b)
 p = ones(1,6)*(1/6);
-psum = cumsum(p);
 
 for i=1:15
     %quando o valor gerado for maior que a probabilidade de sair um certo
     %número, saiu o número seguinte no dado
-   lanc(i) = 1 + sum(rand(1,1)>psum) 
+   lanc(i) = 1 + sum(rand(1,1)>cumsum(p)) 
 end
 
 lanc
