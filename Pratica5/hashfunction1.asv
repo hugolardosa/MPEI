@@ -1,0 +1,9 @@
+function [X] = hashfunction1()
+%UNTITLED2 This function generates a hash value from a text string
+size = round(rand()*17+3); %aleatório entre 3 e 20
+alpha = ['A':'Z' 'a':'z' ];
+for i= 1:size
+    chr(i) = alpha(round(rand()*length(alpha)));
+end
+X = string(chr);
+end

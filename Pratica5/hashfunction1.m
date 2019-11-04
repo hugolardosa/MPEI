@@ -1,7 +1,9 @@
-function [X] = hashfunction1(inputArg1,inputArg2)
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
-outputArg1 = inputArg1;
-outputArg2 = inputArg2;
+function [X] = hashfunction1()
+%UNTITLED2 This function generates a hash value from a text string
+tamanho = round(rand()*17+3); %aleatório entre 3 e 20
+alpha = ['A':'Z' 'a':'z' ];
+%for i= 1:tamanho
+%   X(i) = alpha(randi(length(alpha)));
+%end
+X = alpha(randi(length(alpha),1,tamanho));
 end
-
