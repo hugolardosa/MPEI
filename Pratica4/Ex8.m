@@ -25,18 +25,16 @@ N = 100;
 %U(-5,5)
 a = -5;
 b = 5;
-X = rand(1, N);
-X = X*(b-a) + a;
+X = rand(1, N)*(b-a) + a;
 
 %U(0,1/sqrt(2*pi))
 a = 0;
 b = 1/sqrt(2*pi);
-Y = rand(1, N);
-Y = Y*(b-a) + a;
+Y = rand(1, N)*(b-a) + a;
 
 j = 1;
 for i = -5:5
-    cona(j) = densidadeprob(i); %grafico da função
+    fun(j) = densidadeprob(i); %grafico da função
     j = j + 1;
 end
 Z = zeros(1,N);
@@ -46,9 +44,9 @@ for i = 1:N
     end
 end
 plot(Z,Y,'.')
-plot(cona)
+%plot(fun)
 hold on
-plot(-5:5, X)
+plot(-10:10, X)
 hold off
 
     %for i = 1:N
