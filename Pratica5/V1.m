@@ -1,27 +1,34 @@
 %% Primeira versão
 %% Exercício 1
 % para testar a função de hash:
-chave()
+chave(3,20)
 
 %% Exercício 2
-hash1 = string2hash('MPEI é uma disciplina do segundo ano');
-disp(hash1)
-hash2 = string2hash('MPEI é uma disciplina do segundo ano','sdbm');
-disp(hash2)
+hash1 = string2hash('MPEI é uma cadeira do segundo ano');
+fprintf('Primeiro hashcode (algoritmo djb2) : %d\n', hash1);
+hash2 = string2hash('MPEI é uma cadeira do segundo ano','sdbm');
+fprintf('Segundo hashcode (algoritmo sbdm) : %d\n', hash2);
 
 %% Exercício 3
-tamanho = round(1000/0.8); %fator de carga 0.8
-res = zeros(1,tamanho);
-for i = 1:tamanho
-    hash = string2hash(chave());
-    res(i) = mod(hash, tamanho);
-    res(i+1) = res(i+1)+1;
-    subplot(1,2,1)
-    hist(res, 0:tamanho)
+%inserção de 1000 strings numa hash table
+% guardar informação do número de chaves que foram mapeadas
+%numa determinada posição
+N = 1000;
+tamanho = round(N/0.8); %fator de carga 0.8
+pos = zeros(1,N);
+counter = zeros(1, tamanho);
+for i = 1:N
+    a = string2hash(chave(3,20));
+    hash = mod(a, tamanho) + 1; %posições
+    %pos(i+1) = pos(i+1)+1; %porque é que incrementamos a posição seguinte?
+    counter(hash) = counter(hash) + 1; %incrementa o numero de strings que foram guardadas numa posição
+    subplot(2,1,1)
+    plot(counter)
+    title('Número de strings em cada posição');
     drawnow
-    subplot(1,2,2)
-    hist(unique(i),0:1:max((unique(i))))
+    subplot(2,1,2)
+    %hist(unique(pos),0:1:max((unique(pos))))
+    hist(counter, 0:1:max(counter))
+    title('Número de posições com x strings');
     drawnow
 end
-    
-    

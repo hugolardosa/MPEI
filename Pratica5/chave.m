@@ -1,7 +1,7 @@
-function [X] = chave()
-%UNTITLED2 This function generates a hash value from a text string
-tamanho = round(rand()*17+3); %aleatório entre 3 e 20
-alpha = ['A':'Z' 'a':'z' ];
+function [X] = chave(min, max)
+%CHAVE Esta função gera uma string
+tamanho = round(rand()*(max-min)+min); %tamanho aleatório entre 3 e 20
+alpha = ['A':'Z' 'a':'z' ]; %todos os caracteres que podem ser usados
 %for i= 1:tamanho
 %   X(i) = alpha(randi(length(alpha)));
 %end
