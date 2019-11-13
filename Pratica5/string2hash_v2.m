@@ -1,4 +1,4 @@
-function [Y] = hashf(string,N)
+function [Y] = string2hash_v2(string,N)
 %UNTITLED Summary of this function goes here
     string=double(string);
     hash = 5381*ones(size(string,1),1); 

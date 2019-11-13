@@ -35,10 +35,12 @@ end
 
 %% Exercício 4
 % X -> número de chaves mapeadas para uma posição
-%max = max(counter);
-px = counter./1250; %vetor com as respetivas probabilidades
-stem(px); %gerar o grafico massa de probabilidade
-fprintf('Média : %f\n', mean(counter)); %não temos certeza desta função de matlab
-fprintf('Variancia : %f\n', var(counter)); %não temos a certeza desta função de matlab
-
+px = counter/tamanho; %vetor com as respetivas probabilidades
+dist = cumsum(px);
+stairs(dist); %gerar o grafico de função de distribuição acumulada
+%X = [1:length(counter)];
+%e = sum(X.*px');
+%var = sum(((X.^2).*px)-e.^2);
+fprintf('Esperança: %f\n', mean(counter));
+fprintf('Variancia: %f\n', var(counter));
 
