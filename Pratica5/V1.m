@@ -36,13 +36,9 @@ end
 %% Exercício 4
 % X -> número de chaves mapeadas para uma posição
 %max = max(counter);
-px = counter(i)./1250;
-hist(px, 0:1:max(px));
-for i = 1:px(length)
-    media = media + px(i)*counter(i);
-    a = a + px(i)*counter(i)^2
-end
+px = counter./1250; %vetor com as respetivas probabilidades
+stem(px); %gerar o grafico massa de probabilidade
+fprintf('Média : %f\n', mean(counter)); %não temos certeza desta função de matlab
+fprintf('Variancia : %f\n', var(counter)); %não temos a certeza desta função de matlab
 
-var = a- media^2;
 
-%acabar este
