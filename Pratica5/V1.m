@@ -32,3 +32,17 @@ for i = 1:N
     title('Número de posições com x strings');
     drawnow
 end
+
+%% Exercício 4
+% X -> número de chaves mapeadas para uma posição
+%max = max(counter);
+px = counter(i)./1250;
+hist(px, 0:1:max(px));
+for i = 1:px(length)
+    media = media + px(i)*counter(i);
+    a = a + px(i)*counter(i)^2
+end
+
+var = a- media^2;
+
+%acabar este
