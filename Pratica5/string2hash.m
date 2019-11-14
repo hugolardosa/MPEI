@@ -1,6 +1,6 @@
 function hash=string2hash(str,type)
 % This function generates a hash value from a text string
-%
+% Função obtida aqui: https://www.mathworks.com/matlabcentral/fileexchange/27940-string2hash
 % hash=string2hash(str,type);
 %
 % inputs,

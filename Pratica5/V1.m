@@ -20,14 +20,12 @@ counter = zeros(1, tamanho);
 for i = 1:N
     a = string2hash(chave(3,20));
     hash = mod(a, tamanho) + 1; %posições
-    %pos(i+1) = pos(i+1)+1; %porque é que incrementamos a posição seguinte?
     counter(hash) = counter(hash) + 1; %incrementa o numero de strings que foram guardadas numa posição
     subplot(2,1,1)
     plot(counter)
     title('Número de strings em cada posição');
     drawnow
     subplot(2,1,2)
-    %hist(unique(pos),0:1:max((unique(pos))))
     hist(counter, 0:1:max(counter))
     title('Número de posições com x strings');
     drawnow
