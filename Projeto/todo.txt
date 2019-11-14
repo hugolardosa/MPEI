@@ -1,0 +1,61 @@
+----------------------------------------------------------------------------------------------------
+A DESENVOLVER:
+
+-bloom filter
+-minhash
+- testes destes 2 módulos^^
+
+----------------------------------------------------------------------------------------------------
+A ENTREGAR:
+
+-entregar código e mini relatório (até dia 29 de novembro, 
+mas verificar se para nós não é dia 22 ou 26)
+A apresentação é na primeira aula prática de dezembro (para nós é dia 2 de dezembro)
+
+
+----------------------------------------------------------------------------------------------------
+CLASSIFICAÇÕES:
+
+• Parte 1 - Módulos
+– Classificação até 8 ( 3 para Bloom, 5 MinHash )
+– Obrigatório ter os 2 módulos a funcionar para ter >=6
+nesta parte
+– Cuidado com as cópias: se detectadas serão penalizados,
+dividindo a nota pelo número de cópias
+
+• Parte 2 - Teste dos módulos
+– Classificação até 2
+– Obrigatório ter testes de ambos os módulos
+– Bónus de até +20% para quem testar com dados relativos à
+aplicação conjunta
+
+• Parte 3 - Aplicação conjunta (classificação até 5 valores)
+
+• Parte 4- Criação e obtenção de dados para desenvolvimento e
+teste da aplicação conjunta ( até 2 valores)
+– Será em particular tido em conta o tamanho dos datasets
+
+• Parte 5 (apresentação + relatório)
+– Apresentação (1 valor) : recomenda-se Powerpoint (ou equivalente)
+– Demonstração “live” (1 valor)
+– Relatório (1 valor) -- máximo 5 páginas!
+
+• Serão valorizadas soluções que empreguem variantes/evoluções
+dos algoritmos base (variantes do Bloom filter, LSH).
+• classificações >=18 poderão exigir uma apresentação extra
+
+----------------------------------------------------------------------------------------------------
+RELATÓRIO E APRESENTAÇÃO:
+
+• Relatório
+– Máximo 5 páginas
+– Deve incluir:
+- Descrição de como correr os vários programas (testes, demonstração
+conjunta, etc)
+- Apresentação e análise dos resultados obtidos nos vários testes
+- Descrição da aplicação de uso conjunto bem como das vantajens e limitações
+das soluções propostas
+- Descrição dos dados de teste da aplicação
+• Apresentação
+– se criarem slides para a apresentação devem submeter o respetivo
+documento (não é obrigatório fazer um conjunto de slides)
