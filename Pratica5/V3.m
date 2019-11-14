@@ -43,7 +43,7 @@ fprintf('Variancia: %f\n', var(counter));
 %destes, concluímos que há poucas colisões na mesma posição entre mais do
 %que duas strings, e as colisões entre duas strings são igualmente
 %reduzidas.
-%A média obtida foi de 0.8 o que indica que é guardada aporximadamente uma
+%A média obtida foi de 0.8 o que indica que é guardada aproximadamente uma
 %string em cada posição da hashtable e o valor de variância de 0.7 mostra
 %que a quantidade de strings por posição é próxima do valor da média.
 %Assim, temos uma distribuição uniforme das chaves pelas posições da
