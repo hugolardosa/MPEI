@@ -52,7 +52,17 @@ public class CountingBloomFilter {
 	}
 	
 	//verfica se é membro
-	public void membro() {
-		
+	public int membro(String Element) {
+		int y = 1;
+		int h = 0;
+		for (int j = 0; j < k; j++) { //percorrer todas as funções de dispersão
+			h = h.hash(Element + i);
+			h = null; // h = rem(h,length(F));
+			if(BloomVector[h+1]==0) {
+				y=0;
+				break;
+			}
+		}
+	return y;		
 	}
 }
