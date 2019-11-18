@@ -5,64 +5,79 @@
 package modules;
 
 public class CountingBloomFilter {
-	private int n; //Numero de bits do filtro
-	private int m; //numero de elementos de um conjunto
-	private int k; //numero de funções de dispersão
-	private int BloomVector[] ; //bloom vector 
-	private HashFunction h = new HashFunction();
-	
-	//contrutores
-	public CountingBloomFilter(int m,double fatordecarga) {
-		
-		this.m=m;
-		this.n= (int) Math.round(m/fatordecarga);
-		this.k=(int) Math.floor((n*Math.round(m/fatordecarga)));
-		BloomVector = new int[k];
-	}
-	
-	public CountingBloomFilter(double fatordecarga,int m,int k) {
-		this.k=k;
-		this.m=m;
-		this.n= (int) Math.round(m/fatordecarga);
-		BloomVector = new int[k];
-	}
-	
-	public CountingBloomFilter(int m,int k, double fatordecarga) {
-		this.k=k;
-		this.m=m;
-		this.n=n;
-	}
-	
+	private final int n; // Numero de bits do filtro
+	private final int m; // numero de elementos de um conjunto
+	private final int k; // numero de funções de dispersão
+	private int BloomVector[]; // bloom vector
+	private final HashFunction h = new HashFunction();
+	private String element;
 
-	
-	//inicialização
-	public void init(int k) {
-		if(BloomVector == null)BloomVector = new int[k];
+	// contrutores
+	public CountingBloomFilter(final int m, final double fatordecarga) {
+
+		this.m = m;
+		this.n = (int) Math.round(m / fatordecarga);
+		this.k = (int) Math.floor((n * Math.round(m / fatordecarga)));
+		BloomVector = new int[k];
+	}
+
+	public CountingBloomFilter(final double fatordecarga, final int m, final int k) {
+		this.k = k;
+		this.m = m;
+		this.n = (int) Math.round(m / fatordecarga);
+		BloomVector = new int[k];
+	}
+
+	public CountingBloomFilter(final int m, final int k, final int n) {
+		this.k = k;
+		this.m = m;
+		this.n = n;
+	}
+
+	// inicialização
+	public void init(final int k) {
+		if (BloomVector == null)
+			BloomVector = new int[k];
 		for (int i = 0; i < BloomVector.length; i++) {
-			BloomVector[i]=0;
+			BloomVector[i] = 0;
 		}
 	}
-	
-	//adicionaElemento
-	public void addElement(String Element) {
+
+	// Adiciona Elemento
+	public void addElement(final String Element) {
 		for (int i = 0; i < k; i++) {
-			int hash = (int) h.hash(Element + i); //Desenvolver hash(String) HashFunction no 
-			BloomVector[hash]++; 
+			final int hash = (int) h.hash(Element + i); // Desenvolver hash(String) HashFunction no
+			BloomVector[hash]++;
 		}
 	}
-	
-	//verfica se é membro
-	public int membro(String Element) {
-		int y = 1;
+
+	// verfica se é membro
+	public boolean membro(final String Element) {
+		element = Element;
+		int y = true;
 		int h = 0;
-		for (int j = 0; j < k; j++) { //percorrer todas as funções de dispersão
+		for (int j = 0; j < k; j++) { // percorrer todas as funções de dispersão
 			h = h.hash(Element + i);
-			h = null; // h = rem(h,length(F));
-			if(BloomVector[h+1]==0) {
-				y=0;
+			h = h % BloomVector.length; // h = rem(h,length(F));
+			if (BloomVector[h + 1] == 0) {
+				y = false;
 				break;
 			}
 		}
-	return y;		
+		return y;
 	}
+
+	// Remove Elemento
+	public void removeElement(final String Element) {
+		for (int i = 0; i < k; i++) {
+			int hash = (int) h.hash(Element + i); // Desenvolver hash(String) HashFunction no
+			BloomVector[hash]--;
+		}
+	}
+
+	//Contagem tem que se obter o valor minimo
+	public int countElents(String Elemente) {
+		
+	}
+
 }
