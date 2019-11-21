@@ -17,10 +17,10 @@ public class CountingBloomFilter {
 
 		this.m = m;
 		this.n = (int) Math.round(m / fatordecarga);
-		//this.k = (int) Math.floor((n * Math.log(2) / m)) +1; //isto está a fazer com que k = 0
-		this.k = 3;
-		//System.out.println(k);
-		vetorbloom = new int[n]; //aqui estava [k] antes, isso não faz sentido
+		this.k = (int) Math.round((m * Math.log(2) / n)); //isto está a fazer com que k = 0
+		//this.k = 3;
+		System.out.println(k);
+		vetorbloom = new int[n];
 	}
 
 	public CountingBloomFilter(final double fatordecarga, final int m, final int k) {
@@ -39,7 +39,7 @@ public class CountingBloomFilter {
 	// inicialização
 	public void init() {
 		if (vetorbloom == null)
-			vetorbloom = new int[this.n]; //aqui estava [k] antes, isso não faz sentido
+			vetorbloom = new int[this.n];
 		for (int i = 0; i < vetorbloom.length; i++) {
 			vetorbloom[i] = 0;
 		}
@@ -99,7 +99,6 @@ public class CountingBloomFilter {
 		return min;
 	}
 	
-	//????
 	public String show() {
 		String s = "";
 		for (int i : vetorbloom) {
@@ -110,14 +109,20 @@ public class CountingBloomFilter {
 		return s;
 	}
 	
-	//Hash Function
-	public int hash(String elemento) {
+	//Hash Function (retirada de um guião de p2)
+	public int hash(String str) {
 		
-		int hash = 7;
-		for (int i = 0; i < elemento.length(); i++) {
-			hash = hash*31+ elemento.charAt(i);
+		int len = str.length();
+		long hash = 0;
+		char[] buffer = str.toCharArray();
+		
+		int c = 0;
+		for (int i = 0; i < len; i++) {
+			c = buffer[i]+33;
+			hash = ((hash <<3) + ( hash>>28) + c);
 		}
-		//System.out.println(hash%n);
-		return hash % n;
+		
+		hash = hash % n;
+		return (int) (hash>=0 ? hash : hash + n);
 	}
 }

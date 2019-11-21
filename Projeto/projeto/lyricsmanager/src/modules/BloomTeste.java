@@ -10,7 +10,7 @@ public class BloomTeste {
 	public static void main(String[] args) {
 		
 		String[] paises = {"Alemanha", "Portugal", "Suíça", "Espanha", "Noruega", "França", "Inglaterra"};
-		String[] p = {"Suíça", "Portugal"};
+		String[] p = {"Suíça", "Portugal", "Alemanha", "Noruega"};
 		
 		CountingBloomFilter filtro = new CountingBloomFilter(1000, 0.8);
 		filtro.init();
@@ -20,12 +20,16 @@ public class BloomTeste {
 			filtro.adiciona(pais);
 		}
 		
+		System.out.println("aqui");
 		
-		if(filtro.membro("asdafhhdjsfkdjhedhuidesnbjcfdebwhfb")) System.out.println("ups");
+		if(filtro.membro("Argentina")) System.out.println("ups");
 		if(filtro.membro("Alemanha")) System.out.println("yey");
 		if(filtro.membro("Espanha")) System.out.println("ups2");
+		if(filtro.membro("Portugal")) System.out.println("yey2");
+		if(filtro.membro("Portugal1")) System.out.println("yey3");
 		
-		//filtro.show();
+		
+		//System.out.println(filtro.show());
 
 	}
 
