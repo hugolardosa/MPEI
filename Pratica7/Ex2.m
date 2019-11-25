@@ -21,21 +21,13 @@ n1 = 100;
 tic;
 J=zeros(Nu); % array para guardar distâncias (matriz quadrada)
 h= waitbar(0,'Calculating');
-for n1= 1:Nu,  % para cada utilizador
+for n1= 1:Nu  % para cada utilizador
 tstart = tic;
 waitbar(n1/Nu,h);
-for n2= n1+1:Nu, %comparamos com os outros utilizadores
-%% Adicionar código aqui
-k = 1;
-a1 = Set{n1};
-a2 = Set{n2};
-a = minHash(a1,k);
-b = minHash(a2,k);
-J(n1,n2) = min(a,b);
+minHash(Set, 6);
 end
 telapsed = toc(tstart);
 %minTime = min(telapsed,minTime);
-end
 averageTime= toc/Nu
 delete (h)
 %% Com base na distância, determina pares com
