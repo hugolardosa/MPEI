@@ -8,7 +8,7 @@ users = unique(u(:,1)); % Extrai os IDs dos utilizadores
 Nu= length(users); % Número de utilizadores
 % Constrói a lista de filmes para cada utilizador
 Set= cell(Nu,1); % Usa células
-for n = 1:Nu, % Para cada utilizador
+for n = 1:Nu % Para cada utilizador
 % Obtém os filmes de cada um
 ind = find(u(:,1) == users(n));
 % E guarda num array. Usa células porque utilizador tem um número
@@ -36,7 +36,7 @@ end
 telapsed = toc(tstart);
 %minTime = min(telapsed,minTime);
 end
-averageTime= toc/Nu
+averageTime= toc/Nu;
 delete (h)
 %% Com base na distância, determina pares com
 %% distância inferior a um limiar pré-definido
