@@ -6,11 +6,17 @@ T = [1/3 1/4 0; 1/3 11/20 1/2; 1/3 1/5 1/2];
 % segunda coluna não dá 1
 
 %% alínea b
-a = 90/2
+a = 90/2;
 b = 90/4;
 c = 90/4;
-V = [a; b; c];
+V = [a; b; c]
 
 %% alínea c
 
+Vr = T^29 * V
 
+%% alínea d
+
+V2 = [30; 30; 30];
+Vr2 = T^29 * V2
+%dá o mesmo número de alunos por grupo comparativamente à alinea c
