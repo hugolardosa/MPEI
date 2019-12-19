@@ -1,0 +1,23 @@
+%% alinea a 
+%Defina, em Matlab, a matriz de transiçao T. Assuma p = 0.4 e q = 0.6;
+
+p = 0.4; 
+q=0.6;
+
+%   A        B C D
+T=[p^2 		 0 0 q^2;  		%A
+   ((1-p)^2) 0 0 (q*(1-q)); %B
+   (p*(1-p)) 0 0 (q*(1-q)); %C
+   (p*(1-p)) 1 1 ((1-q)^2)] %D
+   
+%% alinea b
+%Qual a probabilidade de o sistema chegar ao estado B apos 10 transições adicionais caso inicial-
+%mente se encontre no estado A ?
+%E de chegar a cada um dos outros estados para as mesmas condições ?
+X0 = [1 ; 0; 0; 0];
+X10 = T^10 * X0;
+%resposta 1
+X10(2)
+%resposta 2
+X0 = [1/4 ; 1/4; 1/4; 1/4];
+X10 = T^10 * X0

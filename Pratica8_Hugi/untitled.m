@@ -1,1 +1,0 @@
-A = xlsread('Livro1.xlsx', '')
