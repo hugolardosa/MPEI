@@ -5,9 +5,8 @@ for i= 1:20
     for j=1:20
         T(j,i) = rand;
     end
-    T(:,i)=T(:,i)./sum(T(:,i));
+    T(:,i)=T(:,i)./sum(T(:,i)); % temos que dividir para ser estocástica
 end
-
 V=zeros(20,1);
 V(1,1)=1; %pomos um 1 na primeira posição porque partimos do estado 1
 
