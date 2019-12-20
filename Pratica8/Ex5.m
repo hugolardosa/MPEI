@@ -1,4 +1,4 @@
-%% exercício 5
+%% Exercício 5
 %% alinea a
 
 T = [0.7 0.2 0.3;

@@ -1,4 +1,4 @@
-%% exercicio 3
+%% Exercício 3
 %% alinea a
 T=zeros(20);
 for i= 1:20
