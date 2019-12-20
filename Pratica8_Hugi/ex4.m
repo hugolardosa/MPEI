@@ -18,6 +18,6 @@ X0 = [1 ; 0; 0; 0];
 X10 = T^10 * X0;
 %resposta 1
 X10(2)
-%resposta 2
-X0 = [1/4 ; 1/4; 1/4; 1/4];
-X10 = T^10 * X0
+%resposta 2 (tendo em conta que as mesmas condições são as mesmas da alinea anterior)
+X10
+
