@@ -30,7 +30,7 @@ while(true)
     plotnuvens(i) = transitions(2);
     plotchuva(i) = transitions(3);
     if(i>1)
-       if( abs(plotsol(i)- plotsol(i-1) )< 10^-4)
+       if( abs(plotsol(i)- plotsol(i-1) ) < 10^-4)
            break;
        end
        if( abs(plotnuvens(i)- plotnuvens(i-1)) < 10^-4)

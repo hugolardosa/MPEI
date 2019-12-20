@@ -17,7 +17,8 @@ T=[p^2 		 0 0 q^2;  		%A
 X0 = [1 ; 0; 0; 0];
 X10 = T^10 * X0;
 %resposta 1
-fprintf('Probabilidade de chegar ao estado:\nB %f \n \n', X10(2))
+fprintf('%s is an element\n', X10(2))
+X10(2)
 %resposta 2 (tendo em conta que as mesmas condições são as mesmas da alinea anterior)
-fprintf('Probabilidade de chegar aos outros estados:\nA %f \nC %f \nD %f \n', X10(1),X10(3),X10(4))
+X10
 
