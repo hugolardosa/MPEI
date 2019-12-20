@@ -26,3 +26,15 @@ H=[ 0.7 0.3 0.5 0;
 Q = H(1:3,1:3)
 F=(eye(3)-Q)'
 sum(F)
+
+%% alinea I
+% an example state transition matrix (page 3 is absorving)
+%H = [0.9 0.5 0 ;
+%0.1 0.4 0 ;
+%0 0.1 1 ];
+% the fundamental matrix
+%Q = H(1:2,1:2);
+%F = inv(eye(2)-Q)
+
+% how to use crawl()
+%state = crawl(H, 1, 3);
