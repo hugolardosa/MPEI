@@ -1,4 +1,4 @@
-%% exercicio 6
+%% Exercício 6
 %% alinea a
 % matriz de transição
 
@@ -47,14 +47,5 @@ Hv2 = [ 0.7 0.39 0.5 0;
 Q = Hv2(1:3,1:3);
 F = (I-Q)^(-1);
 sum(F)
-
-
- 
- 
- 
- 
- 
- 
- 
  
  
