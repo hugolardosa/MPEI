@@ -1,5 +1,5 @@
 %% Exercício 6
-%% alinea a
+%% alínea a
 % matriz de transição
 
 H = [0.8   0     0.3   0 ; 
@@ -7,14 +7,14 @@ H = [0.8   0     0.3   0 ;
      0     0.1   0.4   0;
      0     0     0.1   1];
  
- %% alinea b
+ %% alínea b
  
  X = [1; 0; 0; 0];
  Hfinal = (H^1000)*X;
  Hfinal(2) %probabilidade de ao fim de 1000 passos estar na página 2
  
  
- %% alinea c
+ %% alínea c
  %em 1 passo
  H;
  % em 2 passos
@@ -24,21 +24,21 @@ H = [0.8   0     0.3   0 ;
  % em 100 passos
  H^100;
  
- %% alinea d
+ %% alínea d
  
  Q = H(1:3,1:3);
  
- %% alinea e
+ %% alínea e
  %F = (1 - Q)^(-1)
  I = eye(3);
  F = (I - Q)^(-1)
  
- %% alinea f e g
+ %% alíneas f e g
  
  sum(F) % dá o numero de saltos médios começando em cada página
         % (1, 2, 3)
         
-%% alinea h
+%% alínea h
 
 Hv2 = [ 0.7 0.39 0.5 0;
         0.1 0.1 0.39 0;
