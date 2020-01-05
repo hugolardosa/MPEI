@@ -1,4 +1,5 @@
 %% Exercício 2
+%ATENÇÃO! Este exercício foi adaptado para poder ser resolvido com cadeias de markov
 clc
 clear
 %% alínea a 
