@@ -5,8 +5,8 @@ clc
 T= [0    0   0.5 0   0.5 0.2;
     0.25 1/3 0.5 0.5 0.5 0.2;
     0.25 0   0   0   0   0.2;
-    0.2  1/3 0   0   0   1/5;
-    0.2  0   0   0.5 0   0.2;
+    0.25 1/3 0   0   0   0.2;
+    0.25 0   0   0.5 0   0.2;
     0    1/3 0   0   0   0];
 
 X0 = (ones(1,6)/6)';
@@ -23,7 +23,7 @@ atual = X0;
 N = 100;
 for i= 1:N
     atual = T*atual;
-    resultado(:,i) = atual;
+    resultado(:,i) = atual; %está a guardar todos os vetores obtidos numa unica matriz
     plotA(i) = atual(1);
     plotB(i) = atual(2);
     plotC(i) = atual(3);
