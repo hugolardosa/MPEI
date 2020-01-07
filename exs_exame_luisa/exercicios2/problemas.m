@@ -1,12 +1,14 @@
 %% Problema 1
-
+clc
+clear
 T = [7 8; 3 2]/10;
 X0 = [0.5 0.5]';
 d = 1e-5;
 u_teorico = markov_estadoestacionario(T)
 u_obtido = markov_estadoestacionariov2(T, X0,d)
 %% Problema 2
-
+clc
+clear
 T = [0 0.5 0   0; 
      1 0   0.6 0.6; 
      0 0   0   0.4; 

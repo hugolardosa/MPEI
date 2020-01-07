@@ -1,4 +1,4 @@
-function [u] = markov_estadoestacionario(T,X)
+function [u] = markov_estadoestacionario(T)
 %ESTADOESTACIONÁRIO Utiliza o método das potências para calcular as
 %probabilidades em estado estacionário para uma cadeia de Markov
 n = length(T);
