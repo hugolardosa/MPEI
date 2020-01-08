@@ -1,0 +1,32 @@
+%% Exercício 7
+clc
+clear
+T = [0.8 0.1 0.05;
+     0.2 0.6 0.2;
+     0   0.3 0.75];
+ 
+v = [100 200 30]';
+
+%% alínea a
+Tr = T^3*v
+
+%% alínea b
+Tr = T^365*v
+
+%% alínea c
+i = 1;
+while(true)
+    if(i > 1)
+        v = T*v;
+    end
+    if(v(3) > 130)
+        break;
+    end
+    i = i + 1;
+end
+dia = i
+
+%% vetor estacionário
+M = [T - eye(length(T));ones(1,length(T))];
+X = [zeros(1, length(T)) 1]';
+u = M\X;

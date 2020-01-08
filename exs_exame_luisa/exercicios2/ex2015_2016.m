@@ -56,7 +56,7 @@ title('evolução do pagerank');
 size = length(T);
 M = [T-eye(size);ones(1,size)];
 X = [zeros(1,size) 1]';
-u = M\X;
+u = M\X
 [x,y] = max(u);
 pages = ['A' 'B' 'C' 'D' 'E' 'F'];
 fprintf('\nPágina com maior valor de pagerank (%f): %s\n', x, pages(y))
